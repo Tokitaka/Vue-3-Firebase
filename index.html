@@ -50,9 +50,14 @@
                 <li v-for="item in books">
                     <h3>{{ item.title }}</h3>
                     <p> {{ item.author }} </p>
+                    <img :src="item.img" alt="item.title">
                 </li>
             </ul>
         </div>
+        <!-- attribue binding -->
+        <!-- v-bind mean whatever is inside here now is dynamic -->
+        <!-- <a v-bind:href="url">best website ever</a> -->
+        <a :href="url">best website ever</a>
     </div>
 
     <script src="app.js"></script>
