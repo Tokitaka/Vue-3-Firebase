@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
-        .box{
+        .box {
             padding: 100px 0;
             width: 400px;
             text-align: center;
@@ -16,19 +17,21 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <!-- toggle hide & show -->
-        <p>{{ title }} - {{ age }} - {{ author }}</p>
+        <!-- <p>{{ title }} - {{ age }} - {{ author }}</p>
         <!-- name of directive is on on click on mouse, v is vue, : and the type of event -->
-        <button v-on:click="age++">Increase Age</button>
+        <!-- <button v-on:click="age++">Increase Age</button>
         <button v-on:click="age--">Decrease Age</button>
-        <!-- <div @click="changeTitle">YES?</div> -->
-        <div @click="changeTitle('Orange tree')">YES?</div>
+        <div @click="changeTitle">YES?</div> --> 
+        <!-- <div @click="changeTitle('Orange tree')">YES?</div>
 
         <div v-if="showBooks">
             <p>{{ title }} - {{ age }} - {{ author }}</p>
-        </div>
+        </div> -->
+
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide Books</span>
             <span v-else>Show Books</span>
@@ -41,8 +44,18 @@
         <div class="box" @mouseleave="handleEvent">mouse leave</div>
         <div class="box" @dblclick="handleEvent">double click</div>
         <div class="box" @mousemove="handleMousemove">position - {{x}} - {{y}} </div>
+
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="item in books">
+                    <h3>{{ item.title }}</h3>
+                    <p> {{ item.author }} </p>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="app.js"></script>
 </body>
-</html> 
+
+</html>
